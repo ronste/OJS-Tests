@@ -33,8 +33,8 @@ Journal (BE),,,,,
 ,Neuen Benutzer anlegen,Prio 3,,,
 ,,,,,
 Workflow (BE),,,,,
-,Einreichung: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen,,
-,Nutzer/innen: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen,,
+,Einreichung: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen, Der Aufruf von mindestens einem Tab der Submissions-Seite (z.B. http://<base url>/submissions#active) ist erfolgreich und der Button 'New Submissions' ist verfügbar.,HTTP 200 mit regex 'href.*\/submission\/wizard' für den Button
+,Nutzer/innen: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen, Der Aufruf von 'http://<base url>/management/settings/access#users' ist erfolgreich. Es gibt mindestens einen User in der Liste (Admin)., HTTP 200 mit <tr> mit #component-grid-settings-user-usergrid-row-1 existiert.
 ,Einreichung: neue Einreichung kann begonnen und beendet werden,Out-Of-Scope,,,
 ,Einreichung: über Schnelleinreichungs-Plugin sicherstellen,Out-Of-Scope,,,
 ,Beiträger/innen hinzufügen,Out-Of-Scope,,,
@@ -44,8 +44,8 @@ Workflow (BE),,,,,
 ,Artikel zurückziehen,Out-Of-Scope,,,
 ,,,,,
 Administration ,,,,,
-,Administrationsseite lässt sich aufrufen,Prio 1,Ronald Steffen,,
-,Systeminformationen lassen sich anzeigen (ggf. spezifische Einträge prüfen),Prio 1,Ronald Steffen,,
+,Administrationsseite lässt sich aufrufen,Prio 1,Ronald Steffen,Der Aufruf von 'http://<base url>/index.php/index/admin' ist erfolgreich. , HTTP 200
+,Systeminformationen lassen sich anzeigen (ggf. spezifische Einträge prüfen),Prio 1,Ronald Steffen,Der Aufruf von 'http://<base url>/index.php/index/admin/systemInfo' ist erfolgreich. , HTTP 200
 ,"XML-Export prüfen (u.a. auch Crossref, DOAJ, XML)",Prio 2,,,
 ,E-Mail Vorlagen prüfen,Prio 3,,,
 ,Begutachtungs-Formulare prüfen,Out-Of-Scope,,,
