@@ -34,7 +34,7 @@ Journal (BE),,,,,
 ,,,,,
 Workflow (BE),,,,,
 ,Einreichung: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen, Der Aufruf von mindestens einem Tab der Submissions-Seite (z.B. http://<base url>/submissions#active) ist erfolgreich und der Button 'New Submissions' ist verfügbar.,HTTP 200 mit regex 'href.*\/submission\/wizard' für den Button
-,Nutzer/innen: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen, Der Aufruf von 'http://<base url>/management/settings/access#users' ist erfolgreich. Es gibt mindestens einen User in der Liste (Admin)., HTTP 200, <tr> mit #component-grid-settings-user-usergrid-row-1 existiert.
+,Nutzer/innen: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen, Der Aufruf von 'http://<base url>/management/settings/access#users' ist erfolgreich. Es gibt mindestens einen User in der Liste (Admin)., HTTP 200 mit <tr> mit #component-grid-settings-user-usergrid-row-1 existiert.
 ,Einreichung: neue Einreichung kann begonnen und beendet werden,Out-Of-Scope,,,
 ,Einreichung: über Schnelleinreichungs-Plugin sicherstellen,Out-Of-Scope,,,
 ,Beiträger/innen hinzufügen,Out-Of-Scope,,,
