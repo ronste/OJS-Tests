@@ -5,13 +5,13 @@ Frontend (FE),,,,,
 ,Aktuelle Ausgabe eines exemplarischen Journals anzeigen ,Prio 1,Kristian Gavran ,,$URL/current → HTTP 200
 ,Archiv eines exemplarischen Journals anzeigen,Prio 1,Kristian Gavran ,,$ARTICLE_URL/pdf → HTTP 200
 ,Galley einer exemplarischen Ausgabe anzeigen ,Prio 2,,,
-,Galley eines exemplarischen Artikels anzeigen ,Prio 1,Bernhard Schubert,,
+,Galley eines exemplarischen Artikels anzeigen ,Prio 1,Bernhard Schubert,,$JOURNAL_URL/article/view/$ARTICLE_ID/$GALLEY_ID → HTTP 200
 ,DOI: Vorhanden und kann aufgelöst werden,Prio 2,,,
 ,Vorhandensein und Abrufbarkeit von Bilder/Audio/Video,Prio 2,,,
-,Navigation vorhanden,Prio 1,Bernhard Schubert,,
-,Navigation führt zur gewünschten Zielseite,"Prio 1, 2",Bernhard Schubert,,
+,Navigation vorhanden,Prio 1,Bernhard Schubert,,Seite $JOURNAL_URL enthält Element <div class="pkp_navigation_primary_wrapper">
+,Navigation führt zur gewünschten Zielseite,"Prio 1, 2",Bernhard Schubert,,???
 ,2. Verlinkungen überprüfen,Prio 3,,,
-,Seitenleiste/Footer vorhanden,Prio 1,Bernhard Schubert,,
+,Seitenleiste/Footer vorhanden,Prio 1,Bernhard Schubert,,Seite $JOURNAL_URL enthält Element <div class="pkp_structure_sidebar left">/Seite $JOURNAL_URL enthält Element <div class="pkp_structure_footer_wrapper">
 ,Sprachwechsel vorhanden/funktioniert,Prio 2,,,
 ,Suchfunktion vorhanden,Prio 1,Sebastian Schmidt,,
 ,Suchfunktion liefert erwartetes Resultat,Prio 3,,,
