@@ -1,17 +1,17 @@
 ﻿Themenbereich,Prüfung,Priorität,Beteiligte,Beschreibendes Prüfkriterium,Technisches Prüfkriterium
 Frontend (FE),,,,,
-,"Startseite, statische Seiten vorhanden & weisen gewünschte Inhalte auf",Prio 1,Kristian Gavran ,,
-,Detailseite eines Artikels vorhanden,Prio 1,Kristian Gavran ,,$ARTICLE_URL → HTTP 200
-,Aktuelle Ausgabe eines exemplarischen Journals anzeigen ,Prio 1,Kristian Gavran ,,$URL/current → HTTP 200
-,Archiv eines exemplarischen Journals anzeigen,Prio 1,Kristian Gavran ,,$ARTICLE_URL/pdf → HTTP 200
-,Galley einer exemplarischen Ausgabe anzeigen ,Prio 2,,,
-,Galley eines exemplarischen Artikels anzeigen ,Prio 1,Bernhard Schubert,,$JOURNAL_URL/article/view/$ARTICLE_ID/$GALLEY_ID → HTTP 200
-,DOI: Vorhanden und kann aufgelöst werden,Prio 2,,,
+,"Startseite, statische Seiten vorhanden & weisen gewünschte Inhalte auf",Prio 1,Kristian Gavran ,"Startseite der OJS-Instanz kann aufgerufen werden. Korrekter HTTP-Coder wird zurückgeliefert, Zentrales HTML-Element kann abgefragt werden.",z.B. <div class=’pkp_structure_page’>
+,Aktuelle Ausgabe eines Journals anzeigen ,Prio 1,Kristian Gavran ,"Seite der aktuellen Publikation kann identifiziert werden. Korrekter HTTP-Coder wird zurückgeliefert, Zentrales HTML-Element kann abgefragt werden.",$JOURNAL_URL/issue/view/$NUMBER → HTTP 200
+,Detailseite eines Artikels vorhanden,Prio 1,Kristian Gavran ,"Detailseite eines Artikels kann abgerufen werden. Korrekter HTTP-Coder wird zurückgeliefert, Zentrales HTML-Element kann abgefragt werden.",$JOURNAL_URL/article/view/$NUMBER → HTTP 200
+,Archiv eines Journals anzeigen,Prio 1,Kristian Gavran ,"Archivseite eines Journals kann aufgerufen werden. Korrekter HTTP-Coder wird zurückgeliefert, Zentrales HTML-Element kann abgefragt werden.",$ARTICLE_URL/pdf → HTTP 200
+,Galley einer Journal-Ausgabe anzeigen ,Prio 2,,,
+,Galley eines Artikels anzeigen ,Prio 1,Bernhard Schubert,,$JOURNAL_URL/article/view/$ARTICLE_ID/$GALLEY_ID → HTTP 200
+,DOI: ist Vorhanden und kann aufgelöst werden,Prio 2,,,
 ,Vorhandensein und Abrufbarkeit von Bilder/Audio/Video,Prio 2,,,
-,Navigation vorhanden,Prio 1,Bernhard Schubert,,Seite $JOURNAL_URL enthält Element <div class=\"pkp_navigation_primary_wrapper\">
+,Navigation vorhanden,Prio 1,Bernhard Schubert,,Seite $JOURNAL_URL enthält Element <div class='pkp_navigation_primary_wrapper'>
 ,Navigation führt zur gewünschten Zielseite,"Prio 1, 2",Bernhard Schubert,,???
 ,2. Verlinkungen überprüfen,Prio 3,,,
-,Seitenleiste/Footer vorhanden,Prio 1,Bernhard Schubert,,Seite $JOURNAL_URL enthält Element <div class=\"pkp_structure_sidebar left\">/Seite $JOURNAL_URL enthält Element <div class=\"pkp_structure_footer_wrapper\">
+,Seitenleiste/Footer vorhanden,Prio 1,Bernhard Schubert,,Seite $JOURNAL_URL enthält Element <div class='pkp_structure_sidebar left'>/Seite $JOURNAL_URL enthält Element <div class='pkp_structure_footer_wrapper'>
 ,Sprachwechsel vorhanden/funktioniert,Prio 2,,,
 ,Suchfunktion vorhanden,Prio 1,Sebastian Schmidt,"Die Seite \"search\" ist vorhanden und enthält ein Formular zur Suche von Dokumenten","HTTP 200 + .search_input als Klasse auf Seite auffindbar"
 ,Suchfunktion liefert erwartetes Resultat,Prio 3,,,
@@ -33,8 +33,8 @@ Journal (BE),,,,,
 ,Neuen Benutzer anlegen,Prio 3,,,
 ,,,,,
 Workflow (BE),,,,,
-,Einreichung: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen, Der Aufruf von mindestens einem Tab der Submissions-Seite (z.B. http://<base url>/submissions#active) ist erfolgreich und der Button 'New Submissions' ist verfügbar.,HTTP 200 mit regex 'href.*\/submission\/wizard' für den Button
-,Nutzer/innen: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen, Der Aufruf von 'http://<base url>/management/settings/access#users' ist erfolgreich. Es gibt mindestens einen User in der Liste (Admin)., HTTP 200 mit <tr> mit #component-grid-settings-user-usergrid-row-1 existiert.
+,Einreichung: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen,Der Aufruf von mindestens einem Tab der Submissions-Seite (z.B. http://<base url>/submissions#active) ist erfolgreich und der Button 'New Submissions' ist verfügbar.,HTTP 200 mit regex 'href.*\/submission\/wizard' für den Button
+,Nutzer/innen: Übersicht lässt sich aufrufen,Prio 1,Ronald Steffen,Der Aufruf von 'http://<base url>/management/settings/access#users' ist erfolgreich. Es gibt mindestens einen User in der Liste (Admin)., HTTP 200 mit <tr> mit #component-grid-settings-user-usergrid-row-1 existiert.
 ,Einreichung: neue Einreichung kann begonnen und beendet werden,Out-Of-Scope,,,
 ,Einreichung: über Schnelleinreichungs-Plugin sicherstellen,Out-Of-Scope,,,
 ,Beiträger/innen hinzufügen,Out-Of-Scope,,,
