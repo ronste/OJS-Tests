@@ -1,0 +1,56 @@
+Test ID,Topic Area,Test,Priority,Responsible,Description,Technical Test Criteria,Dependencies (Test ID)
+,Frontend (FE),,,,,,
+1,,A static page exist (e.g. OJS homepage) & displaying the desired content,Prio 1,Kristian Gavran ,"OJS homepage is accessible. Correct HTTP code (200) is returned, specific HTML elements can be selected.",Check for node div.pkp_structure_page,
+2,,Display current journal issue,Prio 1,Kristian Gavran ,"Page of the current publication can be identified. Correct HTTP code (200) is returned, specific HTML elements can be selected.",Check HTTP code 200: $BASE_URL/issue/current; Set Variable $ARTICLE_URL,
+3,,Display Article detail page,Prio 1,Kristian Gavran ,"Article detail page is accessible. Correct HTTP code (200) is returned, specific HTML elements can be selected.",Check HTTP code 200: $ARTICLE_URL ,2
+4,,Display journal archive,Prio 1,Kristian Gavran ,"Archive page is accessible. Correct HTTP code (200) is returned, specific HTML elements can be selected.",Check HTTP code 200: $ARTICLE_URL/?,"2, Galley Nr"
+5,,Display galley of a journal issue,Prio 2,,,,
+6,,Display galley of an article,Prio 1,Bernhard Schubert,Galley page is accessible,Check HTTP code 200: $BASE_URL/article/view/$ARTICLE_ID/$GALLEY_ID,"2, Galley Nr"
+7,,The DOI of an article is present and can be resolved,Prio 2,,,,
+8,,Multimedia content (images/audio/video) is available and can be displayed,Prio 2,,,,
+9,,Display main navigation (including sub menus),Prio 1,Bernhard Schubert,"Page can be called up, HTML element can be queried.",Check $BASE_URL for element div.pkp_navigation_primary_wrapper,
+10,,Main navigation leads to desired target page,Prio 2,Bernhard Schubert,,???,
+11,,Secondary links are accessable,Prio 3,,,,
+12,,Sidebar/Footer available,Prio 1,Bernhard Schubert,"Page can be called up, HTML element can be queried.",Check $BASE_URL for element div.’pkp_structure_sidebar left' & div.pkp_structure_footer_wrapper,
+13,,Language switch available (& working),Prio 2,,,,
+14,,Search page is present,Prio 1,Sebastian Schmidt,The page ‘search’ is available and contains a form for searching documents,Check HTTP code 200: $BASE_URL +  check for element .search_input (findable as a class on page),
+15,,Search function delivers expected result,Prio 3,,,,
+16,,,,,,,
+,Backend (BE),,,,,,
+17,,Standard OJS login in BE possible,Prio 1,Sebastian Schmidt,Login with a provided user account is possible via the ‘login’ page. After login the backend is opened,"Fill & post Login Form (ID per ActionLink -> login/signin (@name=username + @name=password, @type='submit'); Check redirect with HTTP code 200 to $BASE_URL/submissions",
+18,,Standard OJS login with different users/roles possible,Prio 2,,,,
+19,,Admin UI reflects assigned user permissions,Prio 2,,,,
+20,,Plugin gallery accessible,Prio 1,Sebastian Schmidt,Plugin gallery can be accessed and after a short delay the possible plugins are listed,Check HTTP code 200: $BASE_URL/management/settings/website#plugins/pluginGallery’ + after 3 Sec: check for element ‘#component-grid-plugins-plugingallerygrid-row-0’ in DOM,17
+,,,,,,,
+,Journal (BE),,,,,,
+21,,Issue: overview in BE accessible,Prio 1,Sebastian Schmidt,The page for the issue overview can be accessed,Check HTTP code 200 + check for ‘.manageIssues’,17
+,,Issue: can be newly created,Prio 3,,,,
+,,Issue: can be published,Prio 3,,,,
+22,,Website settings: plugin list accessible,Prio 1,Joao Martins,Analogous to ID 20,,17
+23,,Website settings: a specific plugin is present,Prio 1,Joao Martins,,,17
+24,,Website settings: a specific plugin can be activated/deactivated,Prio 1,Joao Martins,,,17
+25,,"Statistics: overview accessible, table contents present",Prio 1,Joao Martins,,,17
+,,Users: new user can be created,Prio 3,,,,
+,,,,,,,
+,Workflow (BE),,,,,,
+26,,Submissions: overview accessible,Prio 1,Ronald Steffen,Calling at least one tab of the submissions page (e.g. $BASE_URL/submissions#active) is successful and the button ‘New Submissions’ is available.,Check HTTP code 200 + Check for button with regex 'href.*\/submission\/wizard',17
+27,,Users: user list accessible,Prio 1,Ronald Steffen,The call of '$BASE_URL/management/settings/access#users' is successful. There is at least one user in the list (Admin).,Check HTTP code 200 + Check for tr#component-grid-settings-user-usergrid-row-1’,17
+,,Submission: new submissioncan be newly created,Out-Of-Scope,,,,
+,,Submission: works via quick submit plugin,Out-Of-Scope,,,,
+,,Add contributors,Out-Of-Scope,,,,
+,,Assign journal editor,Out-Of-Scope,,,,
+,,Add galley,Out-Of-Scope,,,,
+,,Article: can be published,Out-Of-Scope,,,,
+,,Article: can be withdrawn,Out-Of-Scope,,,,
+,,,,,,,
+,Administration ,,,,,,
+28,,Administration page accessible,Prio 1,Ronald Steffen,Calling '$BASE_URL/index/admin' is successful.,Check HTTP code 200: $BASE_URL/index/admin,17
+29,,System information accessible (check specific entries if applicable),Prio 1,Ronald Steffen,Calling '$BASE_URL/index/admin/systemInfo' is successful.,Check HTTP code 200: $BASE_URL/index/admin/systemInfo + check for specific entries in DOM ,17
+,,"Check XML export (incl. Crossref, DOAJ, XML)",Prio 2,,,,
+,,Check email templates,Prio 3,,,,
+,,Check review forms,Out-Of-Scope,,,,
+,,Check presence/active status of specific plugins,Prio 2,,,,
+,,,,,,,
+,Plugins,,,,,,
+,,plugin configuration page is accessible,Prio 2,,,,
+,,Conduct function test for specific plugins,Prio 2,,,,
