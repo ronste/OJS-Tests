@@ -2,7 +2,7 @@
 
 Website: https://hurl.dev
 
-**Important note:** Specific tests of the frontend depend on the theme used and may need to be adapted. The tests provided here are based on the **default** and **manuscript** themes of OJS 3.3.
+**Important note:** Specific tests of the frontend depend on the theme used and may need to be adapted. The tests provided here have been developed for the **default** and **manuscript** themes of OJS 3.3.
 
 ## Install HURL
 
